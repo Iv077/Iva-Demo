@@ -1,8 +1,5 @@
-value = input('''Welcome to LEDs Invaders
-              \t 1. Easy
-              \t 2. Normal
-              \t 3. Difficult
-              Type the number of yout choise and press enter.''') # \n-newline; \t- tab
+value = input('''Welcome
+                \t Enter yout name:''') # \n-newline; \t- tab
 
 def func1(val):
     return val**val;

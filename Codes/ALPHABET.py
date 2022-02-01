@@ -27,12 +27,12 @@ while led<60:                 #hacer el movimiento para siempre
         leds[115-led] = (255,0,0)
         client.put_pixels(leds)
         time.sleep(.1)
-    break
-
-###   B   #####
-led = 0
-while led<60:                 
-    for led in range(52):   
+##    break
+##
+#####   B   #####
+##led = 0
+##while led<60:                 
+##    for led in range(52):   
         leds = [(0,0,0)]*360    
         leds[351-led] = (255,0,0)
         leds[351-led+2] = (255,0,0)
