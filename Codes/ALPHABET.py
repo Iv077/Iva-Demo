@@ -13,18 +13,18 @@ client.put_pixels(leds)
 ####   A   #####   
 led = 0
 while led<60:                 #hacer el movimiento para siempre 
-    for led in range(52):   # en que rango quiero que el movimiento ocurra 
+    for led in range(32):   # en que rango quiero que el movimiento ocurra 
         leds = [(0,0,0)]*360      #todo de un color
-        leds[351-led] = (255,0,0)
-        leds[351-led+8] = (255,0,0) 
-        leds[292-led] = (255,0,0)
-        leds[292-led+6] = (255,0,0)
-        leds[233-led] = (255,0,0)
-        leds[233-led+2] = (255,0,0)
-        leds[233-led+4] = (255,0,0)
-        leds[174-led] = (255,0,0)
-        leds[174-led+2] = (255,0,0)
-        leds[115-led] = (255,0,0)
+        leds[331-led] = (255,0,0)
+        leds[331-led+8] = (255,0,0) 
+        leds[272-led] = (255,0,0)
+        leds[272-led+6] = (255,0,0)
+        leds[213-led] = (255,0,0)
+        leds[213-led+2] = (255,0,0)
+        leds[213-led+4] = (255,0,0)
+        leds[154-led] = (255,0,0)
+        leds[154-led+2] = (255,0,0)
+        leds[95-led] = (255,0,0)
         client.put_pixels(leds)
         time.sleep(.1)
     break
