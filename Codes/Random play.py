@@ -12,7 +12,7 @@ weapon_list = [1, 2, 3, 4, 5]
 
 panel_choise = random.choice(weapon_list)
 
-value = panel_choise
+val = panel_choise
 
 led=0
 def func1(val):
@@ -322,13 +322,13 @@ def func5(val):
     return val**val;
 
 
-if value == 1:
-    func1(value)
-elif value == 2:
-    func2(value)
-elif value == 3:
-    func3(value)
-elif value == 4:
-    func4(value)
-elif value == 5:
-    func5(value)
+if val == 1:
+    func1(val)
+elif val == 2:
+    func2(val)
+elif val == 3:
+    func3(val)
+elif val == 4:
+    func4(val)
+elif val == 5:
+    func5(val)
