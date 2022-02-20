@@ -256,7 +256,7 @@ client.put_pixels(leds)
 
 
 
-###SPOKE 1 #
+###SPOK 1 #
 ##led = 0
 ##while True:                    
 ##        leds =[(0,0,0)]*360
@@ -320,7 +320,7 @@ client.put_pixels(leds)
 ##        client.put_pixels(leds)
 ##        time.sleep(.1)
 
-#SPOKE 2#
+#SPOK 2#
 ##led = 0
 ##while True:                    
 ##        leds =[(0,0,0)]*360
@@ -380,14 +380,14 @@ client.put_pixels(leds)
 ##
 ##
 ##
-led = 0
-while led<30: # si cambio a led<60 al cruzarse se cambian los colores
-    for rows in range(6):
-        leds[led + rows*60] = (255,255,0)
+##led = 0
+##while led<30: # si cambio a led<60 al cruzarse se cambian los colores
+##    for rows in range(6):
+##        leds[led + rows*60] = (255,255,0)
 ##        leds[59-led + rows*60] = (255,0,255)
-    client.put_pixels(leds)
-    time.sleep(.1)
-    led = led + 1
+##    client.put_pixels(leds)
+##    time.sleep(.1)
+##    led = led + 1
 ##led = 0
 ##while led<30:
 ##    for rows in range(1,5):
@@ -396,3 +396,29 @@ while led<30: # si cambio a led<60 al cruzarse se cambian los colores
 ##    client.put_pixels(leds)
 ##    time.sleep(.1)
 ##    led = led + 1
+
+led=0
+while led<60:
+    for led in range(25,26):   
+        leds = [(0,0,0)]*360    
+        leds[344-led+3] = (255,0,0)
+        leds[284-led+2] = (255,0,0)
+        leds[284-led+4] = (255,0,0)
+        leds[224-led+1] = (255,0,0)
+        leds[224-led+5] = (255,0,0)
+        leds[164-led] = (255,0,0)
+        leds[164-led+6] = (255,0,0)
+        leds[104-led] = (255,0,0)
+        leds[104-led+6] = (255,0,0)     
+        leds[351-led] = (255,0,0)
+        leds[351-led+2] = (255,0,0)
+        leds[351-led+4] = (255,0,0)
+        leds[291-led+6] = (255,0,0)
+        leds[231-led+2] = (255,0,0)
+        leds[231-led+4] = (255,0,0)
+        leds[171-led] = (255,0,0)
+        leds[111-led+2] = (255,0,0)
+        leds[111-led+4] = (255,0,0)
+        leds[111-led+6] = (255,0,0)
+        client.put_pixels(leds)
+        time.sleep(.1)
