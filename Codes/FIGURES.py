@@ -384,15 +384,15 @@ led = 0
 while led<30: # si cambio a led<60 al cruzarse se cambian los colores
     for rows in range(6):
         leds[led + rows*60] = (255,255,0)
-        leds[59-led + rows*60] = (255,0,255)
+##        leds[59-led + rows*60] = (255,0,255)
     client.put_pixels(leds)
     time.sleep(.1)
     led = led + 1
-led = 0
-while led<30:
-    for rows in range(1,5):
-        leds[29+led + rows*60] = (0,0,0)
-        leds[30-led + rows*60] = (0,0,0)
-    client.put_pixels(leds)
-    time.sleep(.1)
-    led = led + 1
+##led = 0
+##while led<30:
+##    for rows in range(1,5):
+##        leds[29+led + rows*60] = (0,0,0)
+##        leds[30-led + rows*60] = (0,0,0)
+##    client.put_pixels(leds)
+##    time.sleep(.1)
+##    led = led + 1
