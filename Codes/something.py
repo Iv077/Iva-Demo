@@ -1,6 +1,8 @@
 import opc
 import time
+from time import sleep
 import random
+import colorsys
 
 leds =[(0,0,0)]*360
 
@@ -223,7 +225,7 @@ def func0():
         leds[111-led+6] = rand_color
         client.put_pixels(leds)
         time.sleep(.1)
-    time.sleep(4)
+        time.sleep(4)
 
 
 #ROCK#
@@ -816,79 +818,68 @@ while True:
 
 
 
-led = 0
-while led<30: # si cambio a led<60 al cruzarse se cambian los colores
-    for rows in range(6):
-        leds[led + rows*60] = (255,255,0)
-        leds[59-led + rows*60] = (255,0,255)
-    client.put_pixels(leds)
-    time.sleep(.1)
-    led = led + 1
-led = 0
-while led<30:
-    for rows in range(1,5):
-        leds[29+led + rows*60] = (0,0,0)
-        leds[30-led + rows*60] = (0,0,0)
-    client.put_pixels(leds)
-    time.sleep(.1)
-    led = led + 1
+s = 1.0 ##maximum colour
+v = 1.0 ##maximum brightness
+start_hue = 10 #colour vals
+
+
+for i in range(360): #this decides the final value(kind of)
+        rgb_fractional = colorsys.hsv_to_rgb(((start_hue+i))/25.0, s, i/60) #colorsys returns floats between 0 and 1
+        r,g,b = rgb_fractional #extract said floating point numbers and convert to rgb range
+        leds[i] = (r*10,g*139,b*139)
+client.put_pixels(leds) #assign
+sleep(2)
 
 
 
-if value == 1:
-    func1()
-    func0()
-elif value == 2:
-    func2()
-elif value == 3:
-    func3()
-elif value == 4:
-    func4()
-elif value == 5:
-    func5()
-if panel_choice == 6:
-    func6()
-elif panel_choice == 7:
-    func7()
-elif panel_choice == 8:
-    func8()
-elif panel_choice == 9:
-    func9()
-elif panel_choice == 10:
-    func10()
+while True:
+    if value == 1:
+        func1()
+    elif value == 2:
+        func2()
+    elif value == 3:
+        func3()
+    elif value == 4:
+        func4()
+    elif value == 5:
+        func5()
+    if panel_choice == 6:
+        func6()
+    elif panel_choice == 7:
+        func7()
+    elif panel_choice == 8:
+        func8()
+    elif panel_choice == 9:
+        func9()
+    elif panel_choice == 10:
+        func10()
 
 
 #STATEMENTS FOR RESULTS#
-1 == 6 
-1 > 3
-6 > 3
-1 == 6 
-6 > 4
-6 > 4
-2 == 7 
-7 > 1
-7 > 1
-2 == 7 
-7 > 5
-7 > 5
-3 == 8 
-8 > 4
-8 > 4
-3 == 8 
-8 > 2
-8 > 2
-4 == 9 
-9 > 2
-9 > 2
-4 == 9 
-9 > 5
-9 > 5
-5 == 10 
-10 > 3
-10 > 3
-5 == 10
-10 > 1
-10 > 1
+value[1] = panel_choice[6]
+value[2] = panel_choice[7]
+value[3] = panel_choice[8]
+value[4] = panel_choice[9]
+value[5] = panel_choice[10]
+
+value[1] > value[3]
+value[1] >value[4]
+
+panel_choice[6] > value[3]
+panel_choice[6] > value[4]
+
+panel_choice[7] > value[1]
+panel_choice[7] > value[5]
+
+panel_choice[8] > value[4]
+panel_choice[8] > value[2]
+
+panel_choice[9] > value[2]
+panel_choice[9] > value[5]
+
+panel_choice[10] > value[3]
+panel_choice[10] > value[1]
+
 
 
 if value < panel_choice:   
@@ -899,3 +890,24 @@ elif value == panel_choice:
     
 else:
     print('WINNER')
+
+
+
+
+##
+##led = 0
+##while led<30: # si cambio a led<60 al cruzarse se cambian los colores
+##    for rows in range(6):
+##        leds[led + rows*60] = (255,255,0)
+##        leds[59-led + rows*60] = (255,0,255)
+##    client.put_pixels(leds)
+##    time.sleep(.1)
+##    led = led + 1
+##led = 0
+##while led<30:
+##    for rows in range(1,5):
+##        leds[29+led + rows*60] = (0,0,0)
+##        leds[30-led + rows*60] = (0,0,0)
+##    client.put_pixels(leds)
+##    time.sleep(.1)
+##    led = led + 1
