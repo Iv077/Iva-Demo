@@ -10,179 +10,180 @@ client = opc.Client('localhost:7890')
 client.put_pixels(leds)
 client.put_pixels(leds)
 
-##led = 0
+led = 0
 rand_color = (random.randint(0,255),random.randint(0,255),random.randint(0,255))
-##while True:
-##    for led in range(60):
-##        leds = [(0,0,0)]*360                #W 
-##        leds[300-led] = (255,0,0)
-##        leds[300-led+6] = (255,0,0)
-##        leds[240-led] = (255,0,0)
-##        leds[240-led+2] = (255,0,0)
-##        leds[240-led+4] = (255,0,0)
-##        leds[240-led+6] = (255,0,0)
-##        leds[180-led] = (255,0,0)
-##        leds[180-led+3] = (255,0,0)
-##        leds[180-led+6] = (255,0,0)
-##        leds[120-led] = (255,0,0)
-##        leds[120-led+6] = (255,0,0)
-##        leds[60-led] = (255,0,0)
-##        leds[60-led+6] = (255,0,0)
-##        
-##        leds[309-led] = (255,128,0)         #E
-##        leds[309-led+2] = (255,128,0)
-##        leds[309-led+4] = (255,128,0)
-##        leds[309-led+6] = (255,128,0)
-##        leds[249-led] = (255,128,0)
-##        leds[189-led] = (255,128,0)
-##        leds[189-led+4] = (255,128,0)
-##        leds[189-led+2] = (255,128,0)
-##        leds[129-led] = (255,128,0)
-##        leds[69-led] = (255,128,0)
-##        leds[69-led+2] = (255,128,0)
-##        leds[69-led+4] = (255,128,0)
-##        leds[69-led+6] = (255,128,0)
-##        
-##        leds[318-led] = (255,255,0)         #L
-##        leds[318-led+2] = (255,255,0)
-##        leds[318-led+4] = (255,255,0)
-##        leds[318-led+6] = (255,255,0)
-##        leds[258-led] = (255,255,0)
-##        leds[198-led] = (255,255,0)
-##        leds[138-led] = (255,255,0)
-##        leds[78-led] = (255,255,0)
-##
-##        leds[325-led+2] = (0,255,0)        #C
-##        leds[325-led+4] = (0,255,0) 
-##        leds[265-led] = (0,255,0) 
-##        leds[265-led+6] = (0,255,0) 
-##        leds[205-led] = (0,255,0) 
-##        leds[145-led] = (0,255,0) 
-##        leds[145-led+6] = (0,255,0) 
-##        leds[85-led+2] = (0,255,0) 
-##        leds[85-led+4] = (0,255,0) 
-##
-##        leds[334-led+2] = (0,255,255)        #O
-##        leds[334-led+4] = (0,255,255)
-##        leds[274-led] = (0,255,255)
-##        leds[274-led+6] = (0,255,255)
-##        leds[214-led] = (0,255,255)
-##        leds[214-led+6] = (0,255,255) 
-##        leds[154-led] = (0,255,255)
-##        leds[154-led+6] = (0,255,255)
-##        leds[94-led+2] = (0,255,255)
-##        leds[94-led+4] = (0,255,255)
-##
-##        leds[343-led] = (0,0,255)         #M
-##        leds[343-led+6] = (0,0,255)
-##        leds[283-led] = (0,0,255)
-##        leds[283-led+6] = (0,0,255)
-##        leds[223-led] = (0,0,255)
-##        leds[223-led+3] = (0,0,255)
-##        leds[223-led+6] = (0,0,255)
-##        leds[163-led] = (0,0,255)
-##        leds[163-led+2] = (0,0,255)
-##        leds[163-led+4] = (0,0,255)
-##        leds[163-led+6] = (0,0,255)
-##        leds[103-led] = (0,0,255)
-##        leds[103-led+6] = (0,0,255)
-##
-##        leds[351-led] = (255,0,255)      #E
-##        leds[351-led+2] = (255,0,255)
-##        leds[351-led+4] = (255,0,255)
-##        leds[351-led+6] = (255,0,255)
-##        leds[291-led] = (255,0,255)
-##        leds[231-led] = (255,0,255)
-##        leds[231-led+4] = (255,0,255)
-##        leds[231-led+2] = (255,0,255)
-##        leds[171-led] = (255,0,255)
-##        leds[111-led] = (255,0,255)
-##        leds[111-led+2] = (255,0,255)
-##        leds[111-led+4] = (255,0,255)
-##        leds[111-led+6] = (255,0,255)
-##        client.put_pixels(leds)
-##        time.sleep(.05)
-##    time.sleep(0.5)
-##    break
-##
-##led = 0
-##while led<60:
-##    for led in range(60):  
-##        leds = [(0,0,0)]*360                #P
-##        rand_color = (random.randint(rand_color[0]-50, rand_color[0]+50),random.randint(rand_color[1]-50, rand_color[1]+50),random.randint(rand_color[2]-20, rand_color[2]+20))
-##        leds[309-led] = rand_color
-##        leds[249-led] = rand_color
-##        leds[189-led] = rand_color
-##        leds[189-led+4] = rand_color
-##        leds[189-led+2] = rand_color
-##        leds[129-led] = rand_color
-##        leds[129-led+6] = rand_color
-##        leds[69-led] = rand_color
-##        leds[69-led+2] = rand_color
-##        leds[69-led+4] = rand_color
-##
-##        leds[318-led] = rand_color          #L
-##        leds[318-led+2] = rand_color
-##        leds[318-led+4] = rand_color
-##        leds[318-led+6] = rand_color
-##        leds[258-led] = rand_color
-##        leds[198-led] = rand_color
-##        leds[138-led] = rand_color
-##        leds[78-led] = rand_color
-##
-##        leds[325-led] = rand_color           #A  
-##        leds[325-led+8] = rand_color
-##        leds[266-led] = rand_color
-##        leds[266-led+6] = rand_color
-##        leds[207-led] = rand_color
-##        leds[207-led+2] = rand_color
-##        leds[207-led+4] = rand_color
-##        leds[148-led] = rand_color
-##        leds[148-led+2] = rand_color
-##        leds[89-led] = rand_color
-##
-##        leds[334-led+3] = rand_color        #Y
-##        leds[274-led+3] = rand_color
-##        leds[214-led+3] = rand_color
-##        leds[154-led+2] = rand_color
-##        leds[154-led+4] = rand_color
-##        leds[94-led] = rand_color
-##        leds[94-led+6] = rand_color
-##
-##        leds[343-led] = rand_color          #E
-##        leds[343-led+2] = rand_color
-##        leds[343-led+4] = rand_color
-##        leds[343-led+6] = rand_color
-##        leds[283-led] = rand_color
-##        leds[223-led] = rand_color
-##        leds[223-led+4] = rand_color
-##        leds[223-led+2] = rand_color
-##        leds[163-led] = rand_color
-##        leds[103-led] = rand_color
-##        leds[103-led+2] = rand_color
-##        leds[103-led+4] = rand_color
-##        leds[103-led+6] = rand_color
-##
-##        leds[351-led] = rand_color       #R
-##        leds[351-led+6] = rand_color
-##        leds[291-led] = rand_color
-##        leds[291-led+4] = rand_color
-##        leds[231-led] = rand_color
-##        leds[231-led+4] = rand_color
-##        leds[231-led+2] = rand_color
-##        leds[171-led] = rand_color
-##        leds[171-led+6] = rand_color
-##        leds[111-led] = rand_color
-##        leds[111-led+2] = rand_color
-##        leds[111-led+4] = rand_color
-##        client.put_pixels(leds)
-##        time.sleep(.05)
-##    time.sleep(1)
-##    break
+rand_color1 = (random.randint(0,255),random.randint(0,255),random.randint(0,255))
+while True:
+    for led in range(60):
+        leds = [(0,0,0)]*360                #W 
+        leds[300-led] = (255,0,0)
+        leds[300-led+6] = (255,0,0)
+        leds[240-led] = (255,0,0)
+        leds[240-led+2] = (255,0,0)
+        leds[240-led+4] = (255,0,0)
+        leds[240-led+6] = (255,0,0)
+        leds[180-led] = (255,0,0)
+        leds[180-led+3] = (255,0,0)
+        leds[180-led+6] = (255,0,0)
+        leds[120-led] = (255,0,0)
+        leds[120-led+6] = (255,0,0)
+        leds[60-led] = (255,0,0)
+        leds[60-led+6] = (255,0,0)
+        
+        leds[309-led] = (255,128,0)         #E
+        leds[309-led+2] = (255,128,0)
+        leds[309-led+4] = (255,128,0)
+        leds[309-led+6] = (255,128,0)
+        leds[249-led] = (255,128,0)
+        leds[189-led] = (255,128,0)
+        leds[189-led+4] = (255,128,0)
+        leds[189-led+2] = (255,128,0)
+        leds[129-led] = (255,128,0)
+        leds[69-led] = (255,128,0)
+        leds[69-led+2] = (255,128,0)
+        leds[69-led+4] = (255,128,0)
+        leds[69-led+6] = (255,128,0)
+        
+        leds[318-led] = (255,255,0)         #L
+        leds[318-led+2] = (255,255,0)
+        leds[318-led+4] = (255,255,0)
+        leds[318-led+6] = (255,255,0)
+        leds[258-led] = (255,255,0)
+        leds[198-led] = (255,255,0)
+        leds[138-led] = (255,255,0)
+        leds[78-led] = (255,255,0)
 
-panel_weapon_list = [6, 7, 8, 9, 10]
+        leds[325-led+2] = (0,255,0)        #C
+        leds[325-led+4] = (0,255,0) 
+        leds[265-led] = (0,255,0) 
+        leds[265-led+6] = (0,255,0) 
+        leds[205-led] = (0,255,0) 
+        leds[145-led] = (0,255,0) 
+        leds[145-led+6] = (0,255,0) 
+        leds[85-led+2] = (0,255,0) 
+        leds[85-led+4] = (0,255,0) 
 
-panel_choice = random.choice(panel_weapon_list)
+        leds[334-led+2] = (0,255,255)        #O
+        leds[334-led+4] = (0,255,255)
+        leds[274-led] = (0,255,255)
+        leds[274-led+6] = (0,255,255)
+        leds[214-led] = (0,255,255)
+        leds[214-led+6] = (0,255,255) 
+        leds[154-led] = (0,255,255)
+        leds[154-led+6] = (0,255,255)
+        leds[94-led+2] = (0,255,255)
+        leds[94-led+4] = (0,255,255)
+
+        leds[343-led] = (0,0,255)         #M
+        leds[343-led+6] = (0,0,255)
+        leds[283-led] = (0,0,255)
+        leds[283-led+6] = (0,0,255)
+        leds[223-led] = (0,0,255)
+        leds[223-led+3] = (0,0,255)
+        leds[223-led+6] = (0,0,255)
+        leds[163-led] = (0,0,255)
+        leds[163-led+2] = (0,0,255)
+        leds[163-led+4] = (0,0,255)
+        leds[163-led+6] = (0,0,255)
+        leds[103-led] = (0,0,255)
+        leds[103-led+6] = (0,0,255)
+
+        leds[351-led] = (255,0,255)      #E
+        leds[351-led+2] = (255,0,255)
+        leds[351-led+4] = (255,0,255)
+        leds[351-led+6] = (255,0,255)
+        leds[291-led] = (255,0,255)
+        leds[231-led] = (255,0,255)
+        leds[231-led+4] = (255,0,255)
+        leds[231-led+2] = (255,0,255)
+        leds[171-led] = (255,0,255)
+        leds[111-led] = (255,0,255)
+        leds[111-led+2] = (255,0,255)
+        leds[111-led+4] = (255,0,255)
+        leds[111-led+6] = (255,0,255)
+        client.put_pixels(leds)
+        time.sleep(.05)
+    time.sleep(0.5)
+    break
+
+led = 0
+while led<60:
+    for led in range(60):  
+        leds = [(0,0,0)]*360                #P
+        rand_color = (random.randint(rand_color[0]-50, rand_color[0]+50),random.randint(rand_color[1]-50, rand_color[1]+50),random.randint(rand_color[2]-20, rand_color[2]+20))
+        leds[309-led] = rand_color
+        leds[249-led] = rand_color
+        leds[189-led] = rand_color
+        leds[189-led+4] = rand_color
+        leds[189-led+2] = rand_color
+        leds[129-led] = rand_color
+        leds[129-led+6] = rand_color
+        leds[69-led] = rand_color
+        leds[69-led+2] = rand_color
+        leds[69-led+4] = rand_color
+
+        leds[318-led] = rand_color          #L
+        leds[318-led+2] = rand_color
+        leds[318-led+4] = rand_color
+        leds[318-led+6] = rand_color
+        leds[258-led] = rand_color
+        leds[198-led] = rand_color
+        leds[138-led] = rand_color
+        leds[78-led] = rand_color
+
+        leds[325-led] = rand_color           #A  
+        leds[325-led+8] = rand_color
+        leds[266-led] = rand_color
+        leds[266-led+6] = rand_color
+        leds[207-led] = rand_color
+        leds[207-led+2] = rand_color
+        leds[207-led+4] = rand_color
+        leds[148-led] = rand_color
+        leds[148-led+2] = rand_color
+        leds[89-led] = rand_color
+
+        leds[334-led+3] = rand_color        #Y
+        leds[274-led+3] = rand_color
+        leds[214-led+3] = rand_color
+        leds[154-led+2] = rand_color
+        leds[154-led+4] = rand_color
+        leds[94-led] = rand_color
+        leds[94-led+6] = rand_color
+
+        leds[343-led] = rand_color          #E
+        leds[343-led+2] = rand_color
+        leds[343-led+4] = rand_color
+        leds[343-led+6] = rand_color
+        leds[283-led] = rand_color
+        leds[223-led] = rand_color
+        leds[223-led+4] = rand_color
+        leds[223-led+2] = rand_color
+        leds[163-led] = rand_color
+        leds[103-led] = rand_color
+        leds[103-led+2] = rand_color
+        leds[103-led+4] = rand_color
+        leds[103-led+6] = rand_color
+
+        leds[351-led] = rand_color       #R
+        leds[351-led+6] = rand_color
+        leds[291-led] = rand_color
+        leds[291-led+4] = rand_color
+        leds[231-led] = rand_color
+        leds[231-led+4] = rand_color
+        leds[231-led+2] = rand_color
+        leds[171-led] = rand_color
+        leds[171-led+6] = rand_color
+        leds[111-led] = rand_color
+        leds[111-led+2] = rand_color
+        leds[111-led+4] = rand_color
+        client.put_pixels(leds)
+        time.sleep(.05)
+    time.sleep(1)
+    break
+
+panel_weapon_list = [1, 2, 3, 4, 5]
+
+panel_choice = random.choice(panel_weapon_list)  #ELECCION ALEATORIA DEL PANEL
 
 
 
@@ -195,14 +196,14 @@ value = input('''FROM THIS MOMENT YOU ARE GOING TO PLAY AGAINST 'THE PANEL' TO
                     \t 2. PAPER
                     \t 3. SCISSORS
                     \t 4. LIZARD
-                    \t 5. SPOKE
+                    \t 5. SPOCK
                     
                 Type the number of yout choise and press enter.''') # \n-newline; \t- tab
 
 #VS#
 led=0
 def func0():
-    for led in range(24,25):   
+    for led in range(22,23):      # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
         leds = [(0,0,0)]*360    
         leds[344-led+3] = rand_color
         leds[284-led+2] = rand_color
@@ -213,24 +214,24 @@ def func0():
         leds[164-led+6] = rand_color
         leds[104-led] = rand_color
         leds[104-led+6] = rand_color    
-        leds[351-led] = rand_color
-        leds[351-led+2] = rand_color
-        leds[351-led+4] = rand_color
-        leds[291-led+6] = rand_color
-        leds[231-led+2] = rand_color
-        leds[231-led+4] = rand_color
-        leds[171-led] = rand_color
-        leds[111-led+2] = rand_color
-        leds[111-led+4] = rand_color
-        leds[111-led+6] = rand_color
+        leds[351-led] = rand_color1
+        leds[351-led+2] = rand_color1
+        leds[351-led+4] = rand_color1
+        leds[291-led+6] = rand_color1
+        leds[231-led+2] = rand_color1
+        leds[231-led+4] = rand_color1
+        leds[171-led] = rand_color1
+        leds[111-led+2] = rand_color1
+        leds[111-led+4] = rand_color1
+        leds[111-led+6] = rand_color1
         client.put_pixels(leds)
-        time.sleep(.1)
-        time.sleep(4)
+        time.sleep(.5)
+ 
 
 
 #ROCK#
 def func1():
-    for led in range(0,10):
+    for led in range(0,10):   # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
         leds =[(0,0,0)]*360
         leds[led+62] = (175,75,0)
         leds[led+63] = (175,75,0)
@@ -293,7 +294,7 @@ def func1():
         
 #PAPER#
 def func2():
-    for led in range(0,10):   
+    for led in range(0,10):     # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
         leds =[(0,0,0)]*360     
         leds[led+1] = (255,255,255)        
         leds[led+2] = (255,255,255)
@@ -354,7 +355,7 @@ def func2():
 
 #SCISSORS#
 def func3():
-    for led in range(0,10): 
+    for led in range(0,10):    # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
         leds =[(0,0,0)]*360
         leds[led+1] = (255,0,0)        
         leds[led+2] = (255,0,0)
@@ -403,7 +404,7 @@ def func3():
 
 #LIZARD#
 def func4():
-    for led in range(0,10):
+    for led in range(0,10):   # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
         leds =[(0,0,0)]*360
         leds[led+61] = (255,255,0)        
         leds[led+62] = (255,0,0)
@@ -468,9 +469,9 @@ def func4():
         client.put_pixels(leds)
         time.sleep(.1)
 
-#SPOK#
+#SPOCK#
 def func5():
-    for led in range(0,10):
+    for led in range(0,10):   # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
         leds =[(0,0,0)]*360 
         leds[led+64] = (255,218,185)
         leds[led+65] = (255,218,185)
@@ -517,8 +518,8 @@ def func5():
 
 #ROCK#
 def func6():
-    for led in range(2,10):
-        leds =[(0,0,0)]*360     #si ponemos 48- se mueve de derrecha a izqueirD, si lo quitamos se mueve de izqueirda a derrecha
+    for led in range(2,10):  # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
+        leds =[(0,0,0)]*360     #si ponemos 48- se mueve de derrecha a izquierda, si lo quitamos se mueve de izqueirda a derrecha
         leds[48-led+62] = (175,75,0)
         leds[48-led+63] = (175,75,0)
         leds[48-led+64] = (175,75,0)
@@ -580,7 +581,7 @@ def func6():
 
 #PAPER#
 def func7():
-    for led in range(2,10):
+    for led in range(2,10): # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
         leds =[(0,0,0)]*360     
         leds[48-led+1] = (255,255,255)        
         leds[48-led+2] = (255,255,255)
@@ -641,7 +642,7 @@ def func7():
 
 #SCISSORS#
 def func8():
-    for led in range(2,10):
+    for led in range(2,10): # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
         leds =[(0,0,0)]*360
         leds[48-led+1] = (255,0,0)        
         leds[48-led+2] = (255,0,0)
@@ -690,7 +691,7 @@ def func8():
 
 #LIZARD#
 def func9():
-    for led in range(2,10):
+    for led in range(2,10): # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
         leds =[(0,0,0)]*360
         leds[48-led+61] = (255,255,0)        
         leds[48-led+62] = (255,0,0)
@@ -698,7 +699,7 @@ def func9():
         leds[48-led+64] = (0,100,0)
         leds[48-led+65] = (0,255,0)
         leds[48-led+66] = (0,255,0)
-        leds[48-48-led+67] = (0,255,0)
+        leds[48-led+67] = (0,255,0)
         leds[48-led+68] = (0,255,0)
         leds[48-led+69] = (0,100,0)
         leds[48-led+70] = (255,255,0)
@@ -755,9 +756,9 @@ def func9():
         client.put_pixels(leds)
         time.sleep(.1)
 
-#SPOK#
+#SPOCK#
 def func10():
-    for led in range(2,10):
+    for led in range(2,10): # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
         leds =[(0,0,0)]*360
         leds[48-led+64] = (255,218,185)
         leds[48-led+65] = (255,218,185)
@@ -804,7 +805,6 @@ def func10():
 
 
 
-        
 while True:
     if value.isdigit() == True: #.isgigit()
         value = int(value)
@@ -814,71 +814,85 @@ while True:
         else:
             break
     else:
-        value = input("Don't try with letters, select a number:") # ask for new value
-
-
-
+        value = input("Don't try with letters, select a number:") # ask for new valuee
+ 
+  
 s = 1.0 ##maximum colour
 v = 1.0 ##maximum brightness
 start_hue = 10 #colour vals
 
 
-for i in range(360): #this decides the final value(kind of)
-        rgb_fractional = colorsys.hsv_to_rgb(((start_hue+i))/25.0, s, i/60) #colorsys returns floats between 0 and 1
-        r,g,b = rgb_fractional #extract said floating point numbers and convert to rgb range
-        leds[i] = (r*10,g*139,b*139)
-client.put_pixels(leds) #assign
-sleep(2)
-
-
-
 while True:
-    if value == 1:
-        func1()
-    elif value == 2:
-        func2()
-    elif value == 3:
-        func3()
-    elif value == 4:
-        func4()
-    elif value == 5:
-        func5()
-    if panel_choice == 6:
-        func6()
-    elif panel_choice == 7:
-        func7()
-    elif panel_choice == 8:
-        func8()
-    elif panel_choice == 9:
-        func9()
-    elif panel_choice == 10:
-        func10()
+    for _ in range(4): # '4' NUMERO DE VECES QUE SE REPITE EL LOOP
+        for i in range(360): #this decides the final value(kind of)
+                rgb_fractional = colorsys.hsv_to_rgb(((start_hue+i))/25.0, s, i/60) #colorsys returns floats between 0 and 1
+                r,g,b = rgb_fractional #extract said floating point numbers and convert to rgb range
+                leds[i] = (r*10,g*139,b*139)
+        client.put_pixels(leds) #assign
+        sleep(0.3)
+        for i in range(360): #this decides the final value(kind of)
+                rgb_fractional = colorsys.hsv_to_rgb(((start_hue+i))/25.0, s, i/40) #colorsys returns floats between 0 and 1
+                r,g,b = rgb_fractional #extract said floating point numbers and convert to rgb range
+                leds[i-60] = (r*10,g*139,b*139)
+        client.put_pixels(leds) #assign
+        sleep(0.3)
+
+    for _ in range(4): # '4' NUMERO DE VECES QUE SE REPITE EL LOOP
+        if value == 1:
+            func1()
+            func0()
+        elif value == 2:
+            func2()
+            func0()
+        elif value == 3:
+            func3()
+            func0()
+        elif value == 4:
+            func4()
+            func0()
+        elif value == 5:
+            func5()
+            func0()
+        if panel_choice == 1:
+            func6()
+            func0()
+        elif panel_choice == 2:
+            func7()
+            func0()
+        elif panel_choice == 3:
+            func8()
+            func0()
+        elif panel_choice == 4:
+            func9()
+            func0()
+        elif panel_choice == 5:
+            func10()
+            func0()
+    break
 
 
-#STATEMENTS FOR RESULTS#
-value[1] = panel_choice[6]
-value[2] = panel_choice[7]
-value[3] = panel_choice[8]
-value[4] = panel_choice[9]
-value[5] = panel_choice[10]
-
-value[1] > value[3]
-value[1] >value[4]
-
-panel_choice[6] > value[3]
-panel_choice[6] > value[4]
-
-panel_choice[7] > value[1]
-panel_choice[7] > value[5]
-
-panel_choice[8] > value[4]
-panel_choice[8] > value[2]
-
-panel_choice[9] > value[2]
-panel_choice[9] > value[5]
-
-panel_choice[10] > value[3]
-panel_choice[10] > value[1]
+###STATEMENTS FOR RESULTS#
+##
+##'Scissors' = 3
+##'Paper' = 2
+##'Rock' = 1
+##'Lizard' = 4
+##'Spock' = 5
+##
+##'Scissors' > 'Paper'
+##'Scissors' > 'Lizard'
+##
+##'Paper' > 'Rock'
+##'Paper' > 'Spock'
+##
+##'Rock' > 'Lizard'
+##'Rock' > 'Scissors'
+##
+##'Lizard'> 'Spock'
+##'Lizard' > 'Paper'
+##
+##'Spock' > 'Scissors'
+##'Spock' > 'Rock'
 
 
 
