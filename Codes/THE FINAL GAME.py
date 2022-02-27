@@ -1200,23 +1200,23 @@ def main():
             break
              
         elif value == int(1) and panel_choice == int(1):
-            print('RE-TRY')
+            print('SORRY I DONT KNOW WHO IS THE WINNER, PLEASE TRY AGAIN')
             break
                 
         elif value == int(2) and panel_choice == int(2):
-            print('RE-TRY')
+            print('SORRY I DONT KNOW WHO IS THE WINNER, PLEASE TRY AGAIN')
             break
             
         elif value == int(3) and panel_choice == int(3):
-            print('RE-TRY')
+            print('SORRY I DONT KNOW WHO IS THE WINNER, PLEASE TRY AGAIN')
             break
             
         elif value == int(4) and panel_choice == int(4):
-            print('RE-TRY')
+            print('SORRY I DONT KNOW WHO IS THE WINNER, PLEASE TRY AGAIN')
             break
             
         elif value == int(5) and panel_choice == int(5):
-            print('RE-TRY')
+            print('SORRY I DONT KNOW WHO IS THE WINNER, PLEASE TRY AGAIN')
             break
             
         else:
