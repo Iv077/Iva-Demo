@@ -1,22 +1,27 @@
-import opc
-import time
-from time import sleep
-import random
-import colorsys
+import opc #is a free, open source OPC (OLE for Process Control)
+import time #library that provides various time-related functions
+from time import sleep #function suspends execution
+import random #module used to make random numbers
+import colorsys #module defines bidirectional conversions of color
+                #values between colors expressed in the RGB to HSV
 
-leds =[(0,0,0)]*360
+leds =[(0,0,0)]*360 #makes the background 1 colour
+#360 symbolises the number of LEDS
+#(0,0,0) symbolises the color, in this case black
 
-client = opc.Client('localhost:7890')
-client.put_pixels(leds)
+client = opc.Client('localhost:7890')   #connects the LEDS board to the code
+client.put_pixels(leds)  #calls the function 
 client.put_pixels(leds)
 
 led = 0
 rand_color = (random.randint(0,255),random.randint(0,255),random.randint(0,255))
 rand_color1 = (random.randint(0,255),random.randint(0,255),random.randint(0,255))
+# randint() method returns an integer number selected element from the specified range
+#random = aleatory
 
 led = 0
-while True:
-    for led in range(0,360,60):   
+while True: #loop forever
+    for led in range(0,360,60):   #'for loops' iterates over any sequence
         #DARK BLUE#
         leds[329-led] = (0,0,255)         
         leds[329-led+1] = (0,0,255)
@@ -224,9 +229,9 @@ while True:
         leds[led+56] = (255,69,0)
         leds[led+57] = (255,69,0)
         client.put_pixels(leds)
-        time.sleep(.01)
-    time.sleep(.5)
-    break
+        time.sleep(.01) # function in which we specify the speed of execution 
+    time.sleep(.5) #function suspends execution of the current thread for a given number of seconds
+    break # terminates the current loop and resumes execution at the next statement
 
 while True:
     for led in range(60):
@@ -322,11 +327,11 @@ while True:
     break
 
 led = 0
-while led<60:
+while True:
     for led in range(65):  
-        leds = [(0,0,0)]*360                #P
+        leds = [(0,0,0)]*360  #keeps the background black to not be changed by the movement of the leds with diferent color              #P
         rand_color = (random.randint(rand_color[0]-50, rand_color[0]+50),random.randint(rand_color[1]-50, rand_color[1]+50),random.randint(rand_color[2]-20, rand_color[2]+20))  #RANDOM ELECTION OF COLORS
-        leds[309-led] = rand_color
+        leds[309-led] = rand_color          #P
         leds[249-led] = rand_color
         leds[189-led] = rand_color
         leds[189-led+4] = rand_color
@@ -396,17 +401,19 @@ while led<60:
     time.sleep(1)
     break
 
-led = 0
-while led<30:  # MAKE THE TEXT DESAPEAR FROM THE MIDDLE TO THE SIDES
-    for rows in range(6):
+
+# MAKE THE TEXT DESAPEAR FROM THE MIDDLE TO THE SIDES
+led = 0 # reset led if needed
+while led<30:  
+    for rows in range(6): #in this time we move the leds by rows not individually
         leds[30+led + rows*60] = (0,0,0)
         leds[29-led + rows*60] = (0,0,0)
     client.put_pixels(leds)
     time.sleep(.1)
-    led = led + 1
+    led = led + 1 # makes the leds change position by 1 movement every time
 
 
-panel_weapon_list = [1, 2, 3, 4, 5]
+panel_weapon_list = [1, 2, 3, 4, 5] # tuple of options from which the panel can choose
 
 panel_choice = random.choice(panel_weapon_list)  #RANDOM ELECTION OF THE PANEL'S WEAPON
 
@@ -1051,7 +1058,8 @@ def main():  #FUNCTION FOR MAKE EASY THE RESTART OF THE GAME
     v = 1.0 ##maximum brightness
     start_hue = 10 #colour vals
 
-
+#RGB = red, gree, blue
+#HSV = Hue Saturation Value
     while True:
         for _ in range(4): # '4' NUMERO DE VECES QUE SE REPITE EL LOOP
             for i in range(360): #this decides the final value(kind of)
@@ -1067,7 +1075,11 @@ def main():  #FUNCTION FOR MAKE EASY THE RESTART OF THE GAME
             client.put_pixels(leds) #assign
             sleep(0.3)
 
-        for _ in range(2): # '2' NUMBER OF REPETITIONS OF THE LOOP 
+
+        # From here the programm run the defined functions depending of the
+        # election made in the first imput to choose our 'weapon'
+        
+        for _ in range(2): # '2' NUMBER OF REPETITIONS OF THE LOOP
             if value == 1:
                 func1()
                 func0()
@@ -1139,13 +1151,15 @@ def main():  #FUNCTION FOR MAKE EASY THE RESTART OF THE GAME
 
         ###STATEMENTS FOR RESULTS###
     while True:
-        if value == int(1) and panel_choice == int(3):
+        if value == int(1) and panel_choice == int(3):  #and returns True if both statements are true
             win()
             win()
-            print('WINNER')
+            win()
+            print('WINNER') #function prints the specified message to the screen
             break
 
         elif value == int(1) and panel_choice == int(4):
+            win()
             win()
             win()
             print('WINNER')
@@ -1154,10 +1168,12 @@ def main():  #FUNCTION FOR MAKE EASY THE RESTART OF THE GAME
         elif value == int(2) and panel_choice == int(1):
             win()
             win()
+            win()
             print('WINNER')
             break
             
         elif value == int(2) and panel_choice == int(5):
+            win()
             win()
             win()
             print('WINNER')
@@ -1166,16 +1182,19 @@ def main():  #FUNCTION FOR MAKE EASY THE RESTART OF THE GAME
         elif value == int(3) and panel_choice == int(2):
             win()
             win()
+            win()
             print('WINNER')
             break
             
         elif value == int(3) and panel_choice == int(4):
             win()
             win()
+            win()
             print('WINNER')
             break
             
         elif value == int(4) and panel_choice == int(2):
+            win()
             win()
             win()
             print('WINNER')
@@ -1190,10 +1209,12 @@ def main():  #FUNCTION FOR MAKE EASY THE RESTART OF THE GAME
         elif value == int(5) and panel_choice == int(1):
             win()
             win()
+            win()
             print('WINNER')
             break
             
         elif value == int(5) and panel_choice == int(3):
+            win()
             win()
             win()
             print('WINNER')
@@ -1222,11 +1243,19 @@ def main():  #FUNCTION FOR MAKE EASY THE RESTART OF THE GAME
         else:
             lose()
             lose()
+            lose()
             print('LOSER')
             break
 
-#OPTION FOR RESTART THE GAME IF THE PLAYER WANTS
-    play_again = input('''DO YOU WANNA PLAY AGAIN?
+# OPTION FOR RESTART THE GAME IF THE PLAYER WANTS
+
+        # The imput is an interactive option in whick the player can
+        # deside what is going to happen next
+        
+# Also in this part is giving the option to call the defined function 'main'
+# from incide the defined function
+
+    play_again = input('''DO YOU WANNA PLAY AGAIN?  
 
                        \t YES
                        \t NO
@@ -1239,5 +1268,7 @@ def main():  #FUNCTION FOR MAKE EASY THE RESTART OF THE GAME
         play_again = input("SAD, IT WAS A PLEASURE TO PLAY WITH YOU")
 
     
-main()
+main()  # It is calling the defined function which contains all the game
+        # for make it start, we can say that this is the beginning after
+        # the initial leds of 'welcome player'
         
