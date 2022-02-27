@@ -2,7 +2,7 @@ import opc
 import time
 import random
 
-leds =[(0,0,0)]*360
+leds =[(255,255,255)]*360
 
 client = opc.Client('localhost:7890')
 client.put_pixels(leds)
@@ -397,28 +397,38 @@ client.put_pixels(leds)
 ##    time.sleep(.1)
 ##    led = led + 1
 
+##led=0
+##while led<60:
+##    for led in range(25,26):   
+##        leds = [(0,0,0)]*360    
+##        leds[344-led+3] = (255,0,0)
+##        leds[284-led+2] = (255,0,0)
+##        leds[284-led+4] = (255,0,0)
+##        leds[224-led+1] = (255,0,0)
+##        leds[224-led+5] = (255,0,0)
+##        leds[164-led] = (255,0,0)
+##        leds[164-led+6] = (255,0,0)
+##        leds[104-led] = (255,0,0)
+##        leds[104-led+6] = (255,0,0)     
+##        leds[351-led] = (255,0,0)
+##        leds[351-led+2] = (255,0,0)
+##        leds[351-led+4] = (255,0,0)
+##        leds[291-led+6] = (255,0,0)
+##        leds[231-led+2] = (255,0,0)
+##        leds[231-led+4] = (255,0,0)
+##        leds[171-led] = (255,0,0)
+##        leds[111-led+2] = (255,0,0)
+##        leds[111-led+4] = (255,0,0)
+##        leds[111-led+6] = (255,0,0)
+##        client.put_pixels(leds)
+##        time.sleep(.1)
+
 led=0
-while led<60:
-    for led in range(25,26):   
-        leds = [(0,0,0)]*360    
-        leds[344-led+3] = (255,0,0)
-        leds[284-led+2] = (255,0,0)
-        leds[284-led+4] = (255,0,0)
-        leds[224-led+1] = (255,0,0)
-        leds[224-led+5] = (255,0,0)
-        leds[164-led] = (255,0,0)
-        leds[164-led+6] = (255,0,0)
-        leds[104-led] = (255,0,0)
-        leds[104-led+6] = (255,0,0)     
-        leds[351-led] = (255,0,0)
-        leds[351-led+2] = (255,0,0)
-        leds[351-led+4] = (255,0,0)
-        leds[291-led+6] = (255,0,0)
-        leds[231-led+2] = (255,0,0)
-        leds[231-led+4] = (255,0,0)
-        leds[171-led] = (255,0,0)
-        leds[111-led+2] = (255,0,0)
-        leds[111-led+4] = (255,0,0)
-        leds[111-led+6] = (255,0,0)
-        client.put_pixels(leds)
-        time.sleep(.1)
+
+while led<30:
+    for rows in range(6):
+        leds[30+led + rows*60] = (0,0,0)
+        leds[29-led + rows*60] = (0,0,0)
+    client.put_pixels(leds)
+    time.sleep(.1)
+    led = led + 1

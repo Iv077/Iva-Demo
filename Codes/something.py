@@ -181,6 +181,16 @@ while led<60:
     time.sleep(1)
     break
 
+led = 0
+while led<30:  # MAKE THE TEXT DESAPEAR FROM THE MIDDLE TO THE SIDES
+    for rows in range(6):
+        leds[30+led + rows*60] = (0,0,0)
+        leds[29-led + rows*60] = (0,0,0)
+    client.put_pixels(leds)
+    time.sleep(.1)
+    led = led + 1
+
+
 panel_weapon_list = [1, 2, 3, 4, 5]
 
 panel_choice = random.choice(panel_weapon_list)  #ELECCION ALEATORIA DEL PANEL
@@ -871,57 +881,268 @@ while True:
     break
 
 
-###STATEMENTS FOR RESULTS#
-##
-##'Scissors' = 3
-##'Paper' = 2
-##'Rock' = 1
-##'Lizard' = 4
-##'Spock' = 5
-##
-##'Scissors' > 'Paper'
-##'Scissors' > 'Lizard'
-##
-##'Paper' > 'Rock'
-##'Paper' > 'Spock'
-##
-##'Rock' > 'Lizard'
-##'Rock' > 'Scissors'
-##
-##'Lizard'> 'Spock'
-##'Lizard' > 'Paper'
-##
-##'Spock' > 'Scissors'
-##'Spock' > 'Rock'
+###STATEMENTS FOR RESULTS###
 
-
-
-if value < panel_choice:   
-    print('LOSER')
-    
-elif value == panel_choice:
-    print('RE-START')
-    
-else:
+if value == int(1) and panel_choice == int(3):   
     print('WINNER')
 
+elif value == int(1) and panel_choice == int(4):
+    print('WINNER')
+    
+elif value == int(2) and panel_choice == int(1):
+    print('WINNER')
+    
+elif value == int(2) and panel_choice == int(5):
+    print('WINNER')
+        
+elif value == int(3) and panel_choice == int(2):
+    print('WINNER')
+    
+elif value == int(3) and panel_choice == int(4):
+    print('WINNER')   
+    
+elif value == int(4) and panel_choice == int(2):
+    print('WINNER')
+
+elif value == int(4) and panel_choice == int(5):
+    print('WINNER')
+        
+elif value == int(5) and panel_choice == int(1):
+    print('WINNER')
+    
+elif value == int(5) and panel_choice == int(3):
+    print('WINNER')
+     
+elif value == int(1) and panel_choice == int(1):
+    print('RE-TRY')
+        
+elif value == int(2) and panel_choice == int(2):
+    print('RE-TRY')
+    
+elif value == int(3) and panel_choice == int(3):
+    print('RE-TRY')
+    
+elif value == int(4) and panel_choice == int(4):
+    print('RE-TRY')
+    
+elif value == int(5) and panel_choice == int(5):
+    print('RE-TRY')
+    
+else:
+    print('LOSER')
 
 
+led = 0
+while True:                
+    for led in range(0,360,60):
+        #DARK BLUE#
+        leds[329-led] = (0,0,255)         
+        leds[329-led+1] = (0,0,255)
+        leds[329-led+2] = (0,0,255)
+        leds[329-led+3] = (0,0,255)
+        leds[329-led+4] = (0,0,255)
+        leds[329-led+5] = (0,0,255)
+        leds[329-led+6] = (0,0,255)
+        leds[329-led+7] = (0,0,255)
+        leds[329-led+8] = (0,0,255)
+        leds[329-led+9] = (0,0,255)
+        leds[329-led+10] = (0,0,255)
+        leds[329-led+11] = (0,0,255)
+        leds[329-led+12] = (0,0,255)
+        leds[329-led+13] = (0,0,255)
+        leds[329-led+14] = (0,0,255)
+        leds[329-led+15] = (0,0,255)
+        leds[329-led+16] = (0,0,255)
+        leds[329-led+17] = (0,0,255)
+        leds[329-led+18] = (0,0,255)
+        leds[329-led+19] = (0,0,255)
+        leds[329-led+20] = (0,0,255)
+        leds[329-led+21] = (0,0,255)
+        leds[329-led+22] = (0,0,255)
+        leds[329-led+23] = (0,0,255)
+        leds[329-led+24] = (0,0,255)
+        leds[329-led+25] = (0,0,255)
+        leds[329-led+26] = (0,0,255)
+        leds[329-led+27] = (0,0,255)
+        leds[329-led+28] = (0,0,255)
+        leds[329-led+29] = (0,0,255)
+        leds[329-led+30] = (0,0,255)
+        
+        #ORANGE#
+        leds[led] = (255,69,0)
+        leds[led+1] = (255,69,0)
+        leds[led+2] = (255,69,0)
+        leds[led+3] = (255,69,0)
+        leds[led+4] = (255,69,0)
+        leds[led+5] = (255,69,0)
+        leds[led+6] = (255,69,0)
+        leds[led+7] = (255,69,0)
+        leds[led+8] = (255,69,0)
+        leds[led+9] = (255,69,0)
+        leds[led+10] = (255,69,0)
+        leds[led+11] = (255,69,0)
+        leds[led+12] = (255,69,0)
+        leds[led+13] = (255,69,0)
+        leds[led+14] = (255,69,0)
+        leds[led+15] = (255,69,0)
+        leds[led+16] = (255,69,0)
+        leds[led+17] = (255,69,0)
+        leds[led+23] = (255,69,0)
+        leds[led+24] = (255,69,0)
+        leds[led+25] = (255,69,0)
+        leds[led+26] = (255,69,0)
+        leds[led+27] = (255,69,0)
+        leds[led+28] = (255,69,0)
+        leds[led+29] = (255,69,0)
+        leds[led+30] = (255,69,0)
+        
+        #DARK BLUE IN ORANGE#
+        leds[300-led+2] = (0,0,255)
+        leds[300-led+3] = (0,0,255)
+        leds[300-led+6] = (0,0,255)
+        leds[300-led+7] = (0,0,255)
+        leds[300-led+10] = (0,0,255)
+        leds[300-led+11] = (0,0,255)
+        leds[300-led+14] = (0,0,255)
+        leds[300-led+15] = (0,0,255)
+        leds[300-led+18] = (0,0,255)
+        leds[300-led+19] = (0,0,255)
+        leds[300-led+22] = (0,0,255)
+        leds[300-led+23] = (0,0,255)
+        leds[300-led+26] = (0,0,255)
+        leds[300-led+27] = (0,0,255)
 
-##
-##led = 0
-##while led<30: # si cambio a led<60 al cruzarse se cambian los colores
-##    for rows in range(6):
-##        leds[led + rows*60] = (255,255,0)
-##        leds[59-led + rows*60] = (255,0,255)
-##    client.put_pixels(leds)
-##    time.sleep(.1)
-##    led = led + 1
-##led = 0
-##while led<30:
-##    for rows in range(1,5):
-##        leds[29+led + rows*60] = (0,0,0)
-##        leds[30-led + rows*60] = (0,0,0)
-##    client.put_pixels(leds)
-##    time.sleep(.1)
-##    led = led + 1
+        #LIGHT BLUE IN ORANGE#
+        leds[led+2] = (0,255,255)
+        leds[led+3] = (0,255,255)
+        leds[led+6] = (0,255,255)
+        leds[led+7] = (0,255,255)
+        leds[led+10] = (0,255,255)
+        leds[led+11] = (0,255,255)
+        leds[led+14] = (0,255,255)
+        leds[led+15] = (0,255,255)
+        leds[led+18] = (0,255,255)
+        leds[led+19] = (0,255,255)
+        leds[led+22] = (0,255,255)
+        leds[led+23] = (0,255,255)
+        leds[led+26] = (0,255,255)
+        leds[led+27] = (0,255,255)
+        
+        #LIGHT BLUE IN DARK BLUE#
+        leds[300-led+32] = (0,255,255)
+        leds[300-led+33] = (0,255,255)
+        leds[300-led+36] = (0,255,255)
+        leds[300-led+37] = (0,255,255)
+        leds[300-led+40] = (0,255,255)
+        leds[300-led+41] = (0,255,255)
+        leds[300-led+44] = (0,255,255)
+        leds[300-led+45] = (0,255,255)
+        leds[300-led+48] = (0,255,255)
+        leds[300-led+49] = (0,255,255)
+        leds[300-led+52] = (0,255,255)
+        leds[300-led+53] = (0,255,255)
+        leds[300-led+56] = (0,255,255)
+        leds[300-led+57] = (0,255,255)
+        
+        #ORANGE IN DARK BLUE#
+        leds[led+32] = (255,69,0)
+        leds[led+33] = (255,69,0)
+        leds[led+36] = (255,69,0)
+        leds[led+37] = (255,69,0)
+        leds[led+40] = (255,69,0)
+        leds[led+41] = (255,69,0)
+        leds[led+44] = (255,69,0)
+        leds[led+45] = (255,69,0)
+        leds[led+48] = (255,69,0)
+        leds[led+49] = (255,69,0)
+        leds[led+52] = (255,69,0)
+        leds[led+53] = (255,69,0)
+        leds[led+56] = (255,69,0)
+        leds[led+57] = (255,69,0)
+        
+        
+        client.put_pixels(leds)
+        time.sleep(.1)
+
+        leds[led+18] = (255,69,0)
+        leds[led+19] = (255,69,0)
+        leds[led+20] = (255,69,0)
+        leds[led+21] = (255,69,0)
+        leds[led+22] = (255,69,0)
+        leds[led+23] = (255,69,0)
+        leds[led+24] = (255,69,0)
+        leds[led+25] = (255,69,0)
+        leds[led+26] = (255,69,0)
+        leds[led+27] = (255,69,0)
+        leds[led+28] = (255,69,0)
+        leds[led+29] = (255,69,0)
+        leds[led+30] = (255,69,0)
+        
+        #DARK BLUE IN ORANGE#
+        leds[300-led+2] = (0,0,255)
+        leds[300-led+3] = (0,0,255)
+        leds[300-led+6] = (0,0,255)
+        leds[300-led+7] = (0,0,255)
+        leds[300-led+10] = (0,0,255)
+        leds[300-led+11] = (0,0,255)
+        leds[300-led+14] = (0,0,255)
+        leds[300-led+15] = (0,0,255)
+        leds[300-led+18] = (0,0,255)
+        leds[300-led+19] = (0,0,255)
+        leds[300-led+22] = (0,0,255)
+        leds[300-led+23] = (0,0,255)
+        leds[300-led+26] = (0,0,255)
+        leds[300-led+27] = (0,0,255)
+
+        #LIGHT BLUE IN ORANGE#
+        leds[led+2] = (0,255,255)
+        leds[led+3] = (0,255,255)
+        leds[led+6] = (0,255,255)
+        leds[led+7] = (0,255,255)
+        leds[led+10] = (0,255,255)
+        leds[led+11] = (0,255,255)
+        leds[led+14] = (0,255,255)
+        leds[led+15] = (0,255,255)
+        leds[led+18] = (0,255,255)
+        leds[led+19] = (0,255,255)
+        leds[led+22] = (0,255,255)
+        leds[led+23] = (0,255,255)
+        leds[led+26] = (0,255,255)
+        leds[led+27] = (0,255,255)
+        
+        #LIGHT BLUE IN DARK BLUE#
+        leds[300-led+32] = (0,255,255)
+        leds[300-led+33] = (0,255,255)
+        leds[300-led+36] = (0,255,255)
+        leds[300-led+37] = (0,255,255)
+        leds[300-led+40] = (0,255,255)
+        leds[300-led+41] = (0,255,255)
+        leds[300-led+44] = (0,255,255)
+        leds[300-led+45] = (0,255,255)
+        leds[300-led+48] = (0,255,255)
+        leds[300-led+49] = (0,255,255)
+        leds[300-led+52] = (0,255,255)
+        leds[300-led+53] = (0,255,255)
+        leds[300-led+56] = (0,255,255)
+        leds[300-led+57] = (0,255,255)
+        
+        #ORANGE IN DARK BLUE#
+        leds[led+32] = (255,69,0)
+        leds[led+33] = (255,69,0)
+        leds[led+36] = (255,69,0)
+        leds[led+37] = (255,69,0)
+        leds[led+40] = (255,69,0)
+        leds[led+41] = (255,69,0)
+        leds[led+44] = (255,69,0)
+        leds[led+45] = (255,69,0)
+        leds[led+48] = (255,69,0)
+        leds[led+49] = (255,69,0)
+        leds[led+52] = (255,69,0)
+        leds[led+53] = (255,69,0)
+        leds[led+56] = (255,69,0)
+        leds[led+57] = (255,69,0)
+        
+        
+        client.put_pixels(leds)
+        time.sleep(.1)
+
