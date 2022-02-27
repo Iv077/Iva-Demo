@@ -16,7 +16,7 @@ rand_color1 = (random.randint(0,255),random.randint(0,255),random.randint(0,255)
 
 led = 0
 while True:
-    for led in range(0,360,60):
+    for led in range(0,360,60):   
         #DARK BLUE#
         leds[329-led] = (0,0,255)         
         leds[329-led+1] = (0,0,255)
@@ -325,7 +325,7 @@ led = 0
 while led<60:
     for led in range(65):  
         leds = [(0,0,0)]*360                #P
-        rand_color = (random.randint(rand_color[0]-50, rand_color[0]+50),random.randint(rand_color[1]-50, rand_color[1]+50),random.randint(rand_color[2]-20, rand_color[2]+20))
+        rand_color = (random.randint(rand_color[0]-50, rand_color[0]+50),random.randint(rand_color[1]-50, rand_color[1]+50),random.randint(rand_color[2]-20, rand_color[2]+20))  #RANDOM ELECTION OF COLORS
         leds[309-led] = rand_color
         leds[249-led] = rand_color
         leds[189-led] = rand_color
@@ -408,10 +408,10 @@ while led<30:  # MAKE THE TEXT DESAPEAR FROM THE MIDDLE TO THE SIDES
 
 panel_weapon_list = [1, 2, 3, 4, 5]
 
-panel_choice = random.choice(panel_weapon_list)  #ELECCION ALEATORIA DEL PANEL
+panel_choice = random.choice(panel_weapon_list)  #RANDOM ELECTION OF THE PANEL'S WEAPON
 
 
-def main():
+def main():  #FUNCTION FOR MAKE EASY THE RESTART OF THE GAME
     leds =[(0,0,0)]*360
     value = input('''FROM THIS MOMENT YOU ARE GOING TO PLAY AGAINST 'THE PANEL' TO
                 \n   AN INCREDIBLE DANGEROUS GAME
@@ -429,7 +429,7 @@ def main():
 
 
     while True:
-        if value.isdigit() == True: #.isgigit()
+        if value.isdigit() == True: #.isgigit() - CONVERT ALL THE POSSIBLE CHOICES IN NUMBERS
             value = int(value)
             if value > 5 or value <1: #if value is outside our range:
                 value = input("That option is not possible, try a number between 1 and 5")
@@ -437,12 +437,12 @@ def main():
             else:
                 break
         else:
-            value = input("Don't try with letters, select a number:") # ask for new valuee        
+            value = input("Don't try with letters, select a number:") # ask for new value        
 
     #VS#
     led=0
     def func0():
-        for led in range(22,23):      # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
+        for led in range(22,23):      # RANGE IN WHICH I WANT TO MOVE THE LEDS
             leds = [(0,0,0)]*360    
             leds[344-led+3] = rand_color
             leds[284-led+2] = rand_color
@@ -470,7 +470,7 @@ def main():
 
     #ROCK#
     def func1():
-        for led in range(0,10):   # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
+        for led in range(0,10):   # RANGE IN WHICH I WANT TO MOVE THE LEDS
             leds =[(0,0,0)]*360
             leds[led+62] = (175,75,0)
             leds[led+63] = (175,75,0)
@@ -533,7 +533,7 @@ def main():
             
     #PAPER#
     def func2():
-        for led in range(0,10):     # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
+        for led in range(0,10):     # RANGE IN WHICH I WANT TO MOVE THE LEDS
             leds =[(0,0,0)]*360     
             leds[led+1] = (255,255,255)        
             leds[led+2] = (255,255,255)
@@ -594,7 +594,7 @@ def main():
 
     #SCISSORS#
     def func3():
-        for led in range(0,10):    # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
+        for led in range(0,10):    # RANGE IN WHICH I WANT TO MOVE THE LEDS
             leds =[(0,0,0)]*360
             leds[led+1] = (255,0,0)        
             leds[led+2] = (255,0,0)
@@ -643,7 +643,7 @@ def main():
 
     #LIZARD#
     def func4():
-        for led in range(0,10):   # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
+        for led in range(0,10):   # RANGE IN WHICH I WANT TO MOVE THE LEDS
             leds =[(0,0,0)]*360
             leds[led+61] = (255,255,0)        
             leds[led+62] = (255,0,0)
@@ -710,7 +710,7 @@ def main():
 
     #SPOCK#
     def func5():
-        for led in range(0,10):   # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
+        for led in range(0,10):   # RANGE IN WHICH I WANT TO MOVE THE LEDS
             leds =[(0,0,0)]*360 
             leds[led+64] = (255,218,185)
             leds[led+65] = (255,218,185)
@@ -757,9 +757,9 @@ def main():
 
     #ROCK#
     def func6():
-        for led in range(2,10):  # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
-            leds =[(0,0,0)]*360     #si ponemos 48- se mueve de derrecha a izquierda, si lo quitamos se mueve de izqueirda a derrecha
-            leds[48-led+62] = (175,75,0)
+        for led in range(2,10):  # RANGE IN WHICH I WANT TO MOVE THE LEDS
+            leds =[(0,0,0)]*360    
+            leds[48-led+62] = (175,75,0) # IF WE ADD 48-LED, LEDS WILL MOVE FROM RIGHT TO LEFT, IF WE TAKE IT OUT TH ELEDS WILL MOVE FROM LEFT TO RIGHT 
             leds[48-led+63] = (175,75,0)
             leds[48-led+64] = (175,75,0)
             leds[48-led+65] = (200,150,100)
@@ -820,7 +820,7 @@ def main():
 
     #PAPER#
     def func7():
-        for led in range(2,10): # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
+        for led in range(2,10): # RANGE IN WHICH I WANT TO MOVE THE LEDS
             leds =[(0,0,0)]*360     
             leds[48-led+1] = (255,255,255)        
             leds[48-led+2] = (255,255,255)
@@ -881,7 +881,7 @@ def main():
 
     #SCISSORS#
     def func8():
-        for led in range(2,10): # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
+        for led in range(2,10): # RANGE IN WHICH I WANT TO MOVE THE LEDS
             leds =[(0,0,0)]*360
             leds[48-led+1] = (255,0,0)        
             leds[48-led+2] = (255,0,0)
@@ -930,7 +930,7 @@ def main():
 
     #LIZARD#
     def func9():
-        for led in range(2,10): # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
+        for led in range(2,10): # RANGE IN WHICH I WANT TO MOVE THE LEDS
             leds =[(0,0,0)]*360
             leds[48-led+61] = (255,255,0)        
             leds[48-led+62] = (255,0,0)
@@ -997,7 +997,7 @@ def main():
 
     #SPOCK#
     def func10():
-        for led in range(2,10): # RANGO EN EL QUIERO QUE LOS LEDS SE MUEVAN
+        for led in range(2,10): # RANGE IN WHICH I WANT TO MOVE THE LEDS
             leds =[(0,0,0)]*360
             leds[48-led+64] = (255,218,185)
             leds[48-led+65] = (255,218,185)
@@ -1067,7 +1067,7 @@ def main():
             client.put_pixels(leds) #assign
             sleep(0.3)
 
-        for _ in range(2): # '2' NUMERO DE VECES QUE SE REPITE EL LOOP
+        for _ in range(2): # '2' NUMBER OF REPETITIONS OF THE LOOP 
             if value == 1:
                 func1()
                 func0()
@@ -1100,7 +1100,7 @@ def main():
                 func0()
         break
 
-
+#LISTS - TRYING SOME DIFFERENT WAYS
     winner = [0,6,60,66,120,123,126,180,182,184,186,240,246,10,13,16,73,133,193,250,253,256,
               20,21,26,80,82,86,140,143,146,200,204,206,260,265,266,30,31,36,90,92,96,150,153,156,210,
               214,216,270,275,276,40,42,44,46,100,160,162,164,220,280,282,284,286,50,52,54,110,116,170,
@@ -1113,7 +1113,7 @@ def main():
     led = 0
     def win():
         while True:
-            for led in winner:
+            for led in winner:     #'FOR LOOP' TWICE TO MAKE IT BLINK
                 leds[led] = (0,255,0)
             time.sleep(.3)
             client.put_pixels(leds)
@@ -1225,7 +1225,7 @@ def main():
             print('LOSER')
             break
 
-
+#OPTION FOR RESTART THE GAME IF THE PLAYER WANTS
     play_again = input('''DO YOU WANNA PLAY AGAIN?
 
                        \t YES
